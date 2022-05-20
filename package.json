@@ -20,6 +20,7 @@
   "dependencies": {
     "@googleapis/gmail": "^0.3.2",
     "fs": "*",
+    "googleapis": "^39.2.0",
     "http": "*"
   }
 }
