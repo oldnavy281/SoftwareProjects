@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/oldnavy281/SoftwareProjects#readme",
   "dependencies": {
-    "@googleapis/gmail": "^0.3.2"
+    "@googleapis/gmail": "^0.3.2",
+    "fs": "*",
+    "http": "*"
   }
 }
