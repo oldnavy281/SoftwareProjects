@@ -1,0 +1,23 @@
+{
+  "name": "softwareprojects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oldnavy281/SoftwareProjects.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oldnavy281/SoftwareProjects/issues"
+  },
+  "homepage": "https://github.com/oldnavy281/SoftwareProjects#readme",
+  "dependencies": {
+    "@googleapis/gmail": "^0.3.2"
+  }
+}
