@@ -7,7 +7,7 @@ const readline = require('readline');
 const {google} = require('googleapis');
 
 // If modifying these scopes, delete token.json.
-const SCOPES = ['https://www.googleapis.com/auth/gmail.readonly'];
+const SCOPES = ['https://www.googleapis.com/auth/gmail.readonly', "https://www.googleapis.com/auth/pubsub"];
 // The file token.json stores the user's access and refresh tokens, and is
 // created automatically when the authorization flow completes for the first
 // time.
@@ -92,3 +92,37 @@ function listLabels(auth) {
     }
   });
 }
+/**
+ * Lists the labels in the user's account.
+ *
+ * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
+ */
+ async function listUnreadMsgs(auth) {
+    var gmail = google.gmail({
+        auth: auth,
+        version: 'v1'
+    });
+
+    gmail.users.history.list({
+        userId: "me",
+        startHistoryId: 2982217,
+        labelId: 'Label_8061975816208384485'
+    }, async function (err, results) {
+        // https://developers.google.com/gmail/api/v1/reference/users/history/list#response
+        if (err) return console.log(err);
+        const latest = await results.data.history[results.data.history.length - 1].messages;
+        gmail.users.messages.get({
+            userId: 'me',
+            id: latest[latest.length - 1].id
+        }, (err, res) => {
+            if (res.data.labelIds.includes('UNREAD')) {
+                console.log(res.data.snippet);
+            } else {
+                console.log('No unread messages here!');
+            }
+        });
+
+    });
+}
+
+
