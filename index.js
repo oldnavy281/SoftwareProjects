@@ -11,6 +11,12 @@ const routes = require('./routes');
 const path = require('path');
 const { append } = require('express/lib/response');
 
+const app = express();
+const PORT = 3000;
+
+
+
+
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/gmail.readonly', "https://www.googleapis.com/auth/pubsub"];
 // The file token.json stores the user's access and refresh tokens, and is
@@ -131,3 +137,9 @@ function listLabels(auth) {
 }
 
 
+app.get('/', function(req, res){
+  res.send("AHHHHHHH");
+});
+
+
+app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
