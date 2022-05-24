@@ -5,6 +5,11 @@
 const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
+const express = require('express');
+const pug = require('pug');
+const routes = require('./routes');
+const path = require('path');
+const { append } = require('express/lib/response');
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/gmail.readonly'];
@@ -92,3 +97,13 @@ function listLabels(auth) {
     }
   });
 }
+
+const app = express();
+
+app.set('view engine', 'pug');
+// app.set('views', __dirname + '/views');
+// app.use(express.static(path.join(__dirname, '/public')));
+
+app.get("/", routes.index);
+
+app.listen(3000);
