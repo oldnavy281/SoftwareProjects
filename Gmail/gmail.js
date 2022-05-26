@@ -7,7 +7,7 @@ const readline = require('readline');
 const {google} = require('googleapis');
 const express = require('express');
 const pug = require('pug');
-const routes = require('./routes/routes');
+const routes = require('../routes/routes');
 const path = require('path');
 const { append } = require('express/lib/response');
 
