@@ -5,14 +5,9 @@
 const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
-const express = require('express');
-const pug = require('pug');
-const routes = require('../routes/routes');
-const path = require('path');
 const { append } = require('express/lib/response');
 
-const app = express();
-const PORT = 3000;
+
 
 
 
@@ -135,15 +130,3 @@ function listLabels(auth) {
 
     });
 }
-
-app.set('view engine', 'pug');
-app.set('views', __dirname+ '/views');
-
-app.get('/', routes.index);
-
-// app.get('/', function(req, res){
-//   res.send("AHHHHHHH");
-// });
-
-
-app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
