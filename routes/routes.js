@@ -3,3 +3,4 @@ exports.index = (req, res) =>{
         title:"HI"
     });
 };
+
