@@ -9,7 +9,7 @@ const PORT = 3000;
 
 
 app.set('view engine', 'pug');
-app.set('views', __dirname+ '/views');
+app.set('views', __dirname + '/views');
 
 app.get('/', routes.index);
 app.get('/gmail', routes.index);
