@@ -22,7 +22,7 @@ const commands = [{
     description: 'Replies with Pong!'
 }];
 
-const rest = new REST({ version: '9' }).setToken('token');
+const rest = new REST({ version: '9' }).setToken('OTc5MTg1OTU3MDc1MDMwMTQ2.Gc7BUm.ALr92zcm2uLX7xFm3aGJ23G_aJZXgHMSlBffjo');
 
 (async () => {
     try {
@@ -55,4 +55,4 @@ client.on('interactionCreate', async interaction => {
     }
 });
 
-client.login('token');
+client.login('OTc5MTg1OTU3MDc1MDMwMTQ2.Gc7BUm.ALr92zcm2uLX7xFm3aGJ23G_aJZXgHMSlBffjo');
